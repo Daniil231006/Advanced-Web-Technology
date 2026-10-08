@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+```
+<title>HTML Review - Tables</title>
+
+<link rel="stylesheet" href="style.css">
+```
+
+</head>
+
+<body>
+
+```
+<header>
+    <h1>Advanced Web Technology</h1>
+    <h2>HTML Review Website</h2>
+    <hr>
+</header>
+
+<nav>
+    <a href="index.html" target="_blank">Home</a> |
+    <a href="text.html" target="_blank">Text</a> |
+    <a href="links.html" target="_blank">Links & Media</a> |
+    <a href="lists.html" target="_blank">Lists</a> |
+    <a href="tables.html" target="_blank">Tables</a> |
+    <a href="forms.html" target="_blank">Forms</a> |
+    <a href="media.html" target="_blank">Multimedia</a> |
+    <a href="semantic.html" target="_blank">Semantic</a> |
+    <a href="metadata.html" target="_blank">Metadata</a>
+</nav>
+
+<hr>
+
+<main>
+
+    <h2>HTML Tables</h2>
+
+    <p>
+        HTML tables are used to organize information into rows and
+        columns. Tables are useful for displaying structured data,
+        such as schedules, prices, statistics and student information.
+    </p>
+
+    <h2>Basic Table Structure</h2>
+
+    <p>
+        A table uses the <code>&lt;table&gt;</code> element.
+        Rows are created with <code>&lt;tr&gt;</code>, table headers
+        with <code>&lt;th&gt;</code>, and table data with
+        <code>&lt;td&gt;</code>.
+    </p>
+
+    <pre>
+```
+
+<table>
+<tr>
+<th>Name</th>
+<th>Age</th>
+</tr>
+
+```
+&lt;tr&gt;
+    &lt;td&gt;Alex&lt;/td&gt;
+    &lt;td&gt;20&lt;/td&gt;
+&lt;/tr&gt;
+```
+
+</table> </pre>
+
+```
+    <h3>Example</h3>
+
+    <table border="1" cellpadding="10">
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Course</th>
+        </tr>
+
+        <tr>
+            <td>Alex</td>
+            <td>20</td>
+            <td>Cybersecurity</td>
+        </tr>
+
+        <tr>
+            <td>Maria</td>
+            <td>21</td>
+            <td>Web Development</td>
+        </tr>
+
+        <tr>
+            <td>John</td>
+            <td>19</td>
+            <td>Database</td>
+        </tr>
+    </table>
+
+    <h2>Table Head, Body and Footer</h2>
+
+    <p>
+        Larger tables can be divided into three logical sections:
+        <code>&lt;thead&gt;</code>, <code>&lt;tbody&gt;</code> and
+        <code>&lt;tfoot&gt;</code>.
+    </p>
+
+    <pre>
+```
+
+<table>
+
+```
+&lt;thead&gt;
+    &lt;tr&gt;
+        &lt;th&gt;Product&lt;/th&gt;
+        &lt;th&gt;Price&lt;/th&gt;
+    &lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+    &lt;tr&gt;
+        &lt;td&gt;Keyboard&lt;/td&gt;
+        &lt;td&gt;$50&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/tbody&gt;
+
+&lt;tfoot&gt;
+    &lt;tr&gt;
+        &lt;td&gt;Total&lt;/td&gt;
+        &lt;td&gt;$50&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/tfoot&gt;
+```
+
+</table> </pre>
+
+```
+    <h2>Colspan</h2>
+
+    <p>
+        The <code>colspan</code> attribute allows one cell to span
+        across multiple columns.
+    </p>
+
+    <pre>
+```
+
+<td colspan="2">Total</td> </pre>
+
+```
+    <h3>Example</h3>
+
+    <table border="1" cellpadding="10">
+        <tr>
+            <th colspan="2">Student Information</th>
+        </tr>
+
+        <tr>
+            <td>Name</td>
+            <td>Daniil</td>
+        </tr>
+
+        <tr>
+            <td>Course</td>
+            <td>Cybersecurity</td>
+        </tr>
+    </table>
+
+    <h2>Rowspan</h2>
+
+    <p>
+        The <code>rowspan</code> attribute allows a cell to span
+        across multiple rows.
+    </p>
+
+    <pre>
+```
+
+<td rowspan="2">Cybersecurity</td> </pre>
+
+```
+    <h2>Table Caption</h2>
+
+    <p>
+        The <code>&lt;caption&gt;</code> element provides a title
+        or description for a table.
+    </p>
+
+    <pre>
+```
+
+<table>
+<caption>Student Grades</caption>
+
+```
+...
+```
+
+</table> </pre>
+
+```
+    <h2>Important Table Tags</h2>
+
+    <ul>
+        <li><code>&lt;table&gt;</code> - Creates a table.</li>
+        <li><code>&lt;tr&gt;</code> - Creates a table row.</li>
+        <li><code>&lt;th&gt;</code> - Creates a header cell.</li>
+        <li><code>&lt;td&gt;</code> - Creates a data cell.</li>
+        <li><code>&lt;thead&gt;</code> - Defines the table header.</li>
+        <li><code>&lt;tbody&gt;</code> - Defines the table body.</li>
+        <li><code>&lt;tfoot&gt;</code> - Defines the table footer.</li>
+        <li><code>&lt;caption&gt;</code> - Defines the table title.</li>
+    </ul>
+
+</main>
+
+<hr>
+
+<footer>
+    <p>HTML Review Project - Advanced Web Technology</p>
+</footer>
+```
+
+</body>
+
+</html>

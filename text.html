@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>HTML Review - Text Formatting</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>HTML Text Formatting Tags</h1>
+        <p>Learn how HTML is used to organize and format text.</p>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a> |
+        <a href="text.html">Text</a> |
+        <a href="links.html">Links & Media</a> |
+        <a href="lists.html">Lists</a> |
+        <a href="tables.html">Tables</a> |
+        <a href="forms.html">Forms</a> |
+        <a href="media.html">Multimedia</a> |
+        <a href="semantic.html">Semantic</a> |
+        <a href="metadata.html">Metadata</a>
+    </nav>
+
+    <main>
+
+        <h2>1. Headings</h2>
+
+        <p>
+            HTML provides six heading levels, from
+            <code>&lt;h1&gt;</code> to <code>&lt;h6&gt;</code>.
+            The <code>&lt;h1&gt;</code> element is the most important
+            heading, while <code>&lt;h6&gt;</code> is the smallest level.
+        </p>
+
+        <h1>Heading 1</h1>
+        <h2>Heading 2</h2>
+        <h3>Heading 3</h3>
+        <h4>Heading 4</h4>
+        <h5>Heading 5</h5>
+        <h6>Heading 6</h6>
+
+        <h3>Example</h3>
+
+        <pre>
+&lt;h1&gt;My Main Heading&lt;/h1&gt;
+&lt;h2&gt;My Subheading&lt;/h2&gt;
+        </pre>
+
+        <hr>
+
+
+        <h2>2. Paragraphs</h2>
+
+        <p>
+            The <code>&lt;p&gt;</code> tag is used to create a paragraph.
+            Paragraphs are one of the most common elements in HTML.
+        </p>
+
+        <p>
+            This is an example of a paragraph written using HTML.
+        </p>
+
+        <h3>Example</h3>
+
+        <pre>
+&lt;p&gt;This is my first paragraph.&lt;/p&gt;
+        </pre>
+
+
+        <h2>3. Bold Text</h2>
+
+        <p>
+            The <code>&lt;b&gt;</code> tag makes text visually bold.
+            The <code>&lt;strong&gt;</code> tag also makes text bold,
+            but it indicates that the text has strong importance.
+        </p>
+
+        <p>
+            This is <b>bold text</b>.
+        </p>
+
+        <p>
+            This is <strong>important text</strong>.
+        </p>
+
+        <h3>Example</h3>
+
+        <pre>
+&lt;b&gt;Bold text&lt;/b&gt;
+
+&lt;strong&gt;Important text&lt;/strong&gt;
+        </pre>
+
+
+        <h2>4. Italic Text</h2>
+
+        <p>
+            The <code>&lt;i&gt;</code> tag displays text in italic style.
+            The <code>&lt;em&gt;</code> tag is used to emphasize text.
+        </p>
+
+        <p>
+            This is <i>italic text</i>.
+        </p>
+
+        <p>
+            This is <em>emphasized text</em>.
+        </p>
+
+        <h3>Example</h3>
+
+        <pre>
+&lt;i&gt;Italic text&lt;/i&gt;
+
+&lt;em&gt;Emphasized text&lt;/em&gt;
+        </pre>
+
+
+        <h2>5. Underlined Text</h2>
+
+        <p>
+            The <code>&lt;u&gt;</code> tag is used to display underlined text.
+        </p>
+
+        <p>
+            This is <u>underlined text</u>.
+        </p>
+
+        <h3>Example</h3>
+
+        <pre>
+&lt;u&gt;Underlined text&lt;/u&gt;
+        </pre>
+
+
+        <h2>6. Highlighted Text</h2>
+
+        <p>
+            The <code>&lt;mark&gt;</code> tag highlights part of the text.
+        </p>
+
+        <p>
+            This is <mark>highlighted text</mark>.
+        </p>
+
+        <h3>Example</h3>
+
+        <pre>
+&lt;mark&gt;Important information&lt;/mark&gt;
+        </pre>
+
+
+        <h2>7. Small Text</h2>
+
+        <p>
+            The <code>&lt;small&gt;</code> tag displays smaller text.
+        </p>
+
+        <p>
+            Normal text and <small>small text</small>.
+        </p>
+
+        <h3>Example</h3>
+
+        <pre>
+&lt;small&gt;This is small text.&lt;/small&gt;
+        </pre>
+
+
+        <h2>8. Deleted and Inserted Text</h2>
+
+        <p>
+            The <code>&lt;del&gt;</code> tag represents deleted text.
+            The <code>&lt;ins&gt;</code> tag represents inserted text.
+        </p>
+
+        <p>
+            Old price: <del>$50</del>
+        </p>
+
+        <p>
+            New price: <ins>$40</ins>
+        </p>
+
+        <h3>Example</h3>
+
+        <pre>
+&lt;del&gt;$50&lt;/del&gt;
+
+&lt;ins&gt;$40&lt;/ins&gt;
+        </pre>
+
+
+        <h2>9. Subscript and Superscript</h2>
+
+        <p>
+            The <code>&lt;sub&gt;</code> tag creates subscript text.
+            The <code>&lt;sup&gt;</code> tag creates superscript text.
+        </p>
+
+        <p>
+            Water: H<sub>2</sub>O
+        </p>
+
+        <p>
+            Mathematics: x<sup>2</sup>
+        </p>
+
+        <h3>Example</h3>
+
+        <pre>
+H&lt;sub&gt;2&lt;/sub&gt;O
+
+x&lt;sup&gt;2&lt;/sup&gt;
+        </pre>
+
+
+        <h2>10. Line Break</h2>
+
+        <p>
+            The <code>&lt;br&gt;</code> tag creates a line break without
+            starting a new paragraph.
+        </p>
+
+        <p>
+            First line<br>
+            Second line<br>
+            Third line
+        </p>
+
+        <h3>Example</h3>
+
+        <pre>
+First line&lt;br&gt;
+Second line&lt;br&gt;
+Third line
+        </pre>
+
+
+        <h2>11. Horizontal Line</h2>
+
+        <p>
+            The <code>&lt;hr&gt;</code> tag creates a horizontal line and
+            is commonly used to separate sections of content.
+        </p>
+
+        <hr>
+
+        <h3>Example</h3>
+
+        <pre>
+&lt;hr&gt;
+        </pre>
+
+
+        <h2>12. Quotes</h2>
+
+        <p>
+            The <code>&lt;q&gt;</code> tag is used for a short quotation.
+        </p>
+
+        <p>
+            My teacher said:
+            <q>Practice makes progress.</q>
+        </p>
+
+        <h3>Example</h3>
+
+        <pre>
+&lt;q&gt;Practice makes progress.&lt;/q&gt;
+        </pre>
+
+        <p>
+            The <code>&lt;blockquote&gt;</code> tag is used for a longer
+            quotation.
+        </p>
+
+        <blockquote>
+            Learning HTML is an important first step in understanding
+            how websites are created.
+        </blockquote>
+
+        <h3>Example</h3>
+
+        <pre>
+&lt;blockquote&gt;
+    Learning HTML is an important first step.
+&lt;/blockquote&gt;
+        </pre>
+
+
+        <h2>Text Tag Summary</h2>
+
+        <table>
+            <tr>
+                <th>Tag</th>
+                <th>Purpose</th>
+                <th>Example</th>
+            </tr>
+
+            <tr>
+                <td>&lt;h1&gt; - &lt;h6&gt;</td>
+                <td>Headings</td>
+                <td>&lt;h1&gt;Title&lt;/h1&gt;</td>
+            </tr>
+
+            <tr>
+                <td>&lt;p&gt;</td>
+                <td>Paragraph</td>
+                <td>&lt;p&gt;Text&lt;/p&gt;</td>
+            </tr>
+
+            <tr>
+                <td>&lt;strong&gt;</td>
+                <td>Important text</td>
+                <td>&lt;strong&gt;Important&lt;/strong&gt;</td>
+            </tr>
+
+            <tr>
+                <td>&lt;em&gt;</td>
+                <td>Emphasized text</td>
+                <td>&lt;em&gt;Hello&lt;/em&gt;</td>
+            </tr>
+
+            <tr>
+                <td>&lt;mark&gt;</td>
+                <td>Highlighted text</td>
+                <td>&lt;mark&gt;Important&lt;/mark&gt;</td>
+            </tr>
+
+            <tr>
+                <td>&lt;del&gt;</td>
+                <td>Deleted text</td>
+                <td>&lt;del&gt;Old&lt;/del&gt;</td>
+            </tr>
+
+            <tr>
+                <td>&lt;ins&gt;</td>
+                <td>Inserted text</td>
+                <td>&lt;ins&gt;New&lt;/ins&gt;</td>
+            </tr>
+
+            <tr>
+                <td>&lt;sub&gt;</td>
+                <td>Subscript</td>
+                <td>H&lt;sub&gt;2&lt;/sub&gt;O</td>
+            </tr>
+
+            <tr>
+                <td>&lt;sup&gt;</td>
+                <td>Superscript</td>
+                <td>x&lt;sup&gt;2&lt;/sup&gt;</td>
+            </tr>
+
+            <tr>
+                <td>&lt;br&gt;</td>
+                <td>Line break</td>
+                <td>Text&lt;br&gt;Text</td>
+            </tr>
+        </table>
+
+    </main>
+
+    <footer>
+        <p>HTML Review Project - Advanced Web Technology</p>
+    </footer>
+
+</body>
+
+</html>

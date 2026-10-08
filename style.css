@@ -1,0 +1,194 @@
+/* General page style */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f0f8;
+    color: #333333;
+    margin: 0;
+    line-height: 1.6;
+}
+
+
+/* Header */
+
+header {
+    background-color: #62548f;
+    color: white;
+    text-align: center;
+    padding: 30px;
+}
+
+header h1 {
+    margin-bottom: 5px;
+}
+
+header h2 {
+    font-weight: normal;
+}
+
+
+/* Navigation */
+
+nav {
+    background-color: #29243d;
+    text-align: center;
+    padding: 15px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 8px;
+}
+
+nav a:hover {
+    color: #c9bff0;
+    text-decoration: underline;
+}
+
+
+/* Main content */
+
+main {
+    width: 80%;
+    max-width: 1000px;
+    margin: 30px auto;
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+
+/* Headings */
+
+h2 {
+    color: #62548f;
+}
+
+h3 {
+    color: #4b4072;
+}
+
+
+/* Paragraphs */
+
+p {
+    font-size: 16px;
+}
+
+
+/* Lists */
+
+li {
+    margin: 10px 0;
+}
+
+li a {
+    color: #62548f;
+    text-decoration: none;
+}
+
+li a:hover {
+    text-decoration: underline;
+}
+
+
+/* Code examples */
+
+pre {
+    background-color: #29243d;
+    color: white;
+    padding: 15px;
+    border-radius: 6px;
+    overflow-x: auto;
+}
+
+
+/* Inline code */
+
+code {
+    background-color: #eeeaf7;
+    color: #4b4072;
+    padding: 2px 5px;
+    border-radius: 4px;
+}
+
+
+/* Links inside main content */
+
+main a {
+    color: #62548f;
+    font-weight: bold;
+}
+
+main a:hover {
+    color: #4b4072;
+}
+
+
+/* Images */
+
+main img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+
+/* Video */
+
+main video {
+    max-width: 100%;
+    display: block;
+    margin: 20px 0;
+    border-radius: 8px;
+}
+
+
+/* Audio */
+
+main audio {
+    width: 100%;
+    margin: 15px 0;
+}
+
+
+/* Horizontal lines */
+
+hr {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 25px 0;
+}
+
+
+/* Footer */
+
+footer {
+    background-color: #29243d;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+
+/* Responsive design */
+
+@media (max-width: 700px) {
+
+    main {
+        width: 90%;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    nav a {
+        display: block;
+        margin: 8px;
+    }
+
+    pre {
+        font-size: 13px;
+    }
+
+}

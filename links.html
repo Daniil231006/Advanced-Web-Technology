@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>HTML Review - Links & Media</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Advanced Web Technology</h1>
+        <h2>HTML Review Website</h2>
+        <hr>
+    </header>
+
+    <nav>
+        <a href="index.html" target="_blank">Home</a> |
+        <a href="text.html" target="_blank">Text</a> |
+        <a href="links.html" target="_blank">Links & Media</a> |
+        <a href="lists.html" target="_blank">Lists</a> |
+        <a href="tables.html" target="_blank">Tables</a> |
+        <a href="forms.html" target="_blank">Forms</a> |
+        <a href="media.html" target="_blank">Multimedia</a> |
+        <a href="semantic.html" target="_blank">Semantic</a> |
+        <a href="metadata.html" target="_blank">Metadata</a>
+    </nav>
+
+    <hr>
+
+    <main>
+
+        <h2>Links and Media in HTML</h2>
+
+        <p>
+            HTML provides several elements that allow us to connect webpages,
+            display images, and add audio and video content. Links and media
+            make websites more useful, interactive and informative.
+        </p>
+
+        <h2>HTML Links</h2>
+
+        <p>
+            The <code>&lt;a&gt;</code> element is used to create hyperlinks.
+            A hyperlink allows users to move from one webpage to another page,
+            website, file or location.
+        </p>
+
+        <p>
+            The most important attribute of the anchor element is
+            <code>href</code>. It specifies the destination of the link.
+        </p>
+
+        <pre>
+&lt;a href="https://www.example.com"&gt;
+    Visit Example
+&lt;/a&gt;
+        </pre>
+
+        <p>
+            The text between the opening and closing
+            <code>&lt;a&gt;</code> tags becomes clickable.
+        </p>
+
+        <h3>Opening Links in a New Tab</h3>
+
+        <p>
+            The <code>target</code> attribute controls where the linked
+            document will be opened. The value <code>_blank</code> opens
+            the link in a new browser tab.
+        </p>
+
+        <pre>
+&lt;a href="https://www.example.com" target="_blank"&gt;
+    Open Example
+&lt;/a&gt;
+        </pre>
+
+        <h3>Internal Links</h3>
+
+        <p>
+            Internal links connect different pages within the same website.
+            For example, the following link opens the Text page of this
+            HTML Review Website.
+        </p>
+
+        <pre>
+&lt;a href="text.html"&gt;
+    Text Formatting
+&lt;/a&gt;
+        </pre>
+
+        <h3>Email Links</h3>
+
+        <p>
+            HTML can also create links that open the user's email application.
+            The <code>mailto:</code> scheme is used for this purpose.
+        </p>
+
+        <pre>
+&lt;a href="mailto:student@example.com"&gt;
+    Send an Email
+&lt;/a&gt;
+        </pre>
+
+        <hr>
+
+        <h2>HTML Images</h2>
+
+        <p>
+            Images are added to webpages using the
+            <code>&lt;img&gt;</code> element. The image element is a
+            self-closing or void element, so it does not require a closing
+            <code>&lt;/img&gt;</code> tag.
+        </p>
+
+        <pre>
+&lt;img src="images/photo.jpg" alt="A beautiful landscape"&gt;
+        </pre>
+
+        <h3>The src Attribute</h3>
+
+        <p>
+            The <code>src</code> attribute specifies the location of the
+            image file. The browser uses this path to find and display
+            the image.
+        </p>
+
+        <pre>
+&lt;img src="images/photo.jpg"&gt;
+        </pre>
+
+        <h3>The alt Attribute</h3>
+
+        <p>
+            The <code>alt</code> attribute provides alternative text for
+            an image. It is displayed when the image cannot be loaded and
+            is also useful for accessibility and screen readers.
+        </p>
+
+        <pre>
+&lt;img src="images/student.jpg"
+     alt="Student studying web development"&gt;
+        </pre>
+
+        <h3>Image Width and Height</h3>
+
+        <p>
+            The <code>width</code> and <code>height</code> attributes can
+            be used to specify the dimensions of an image.
+        </p>
+
+        <pre>
+&lt;img src="images/logo.jpg"
+     alt="Website logo"
+     width="300"
+     height="200"&gt;
+        </pre>
+
+        <hr>
+
+        <h2>Clickable Images</h2>
+
+        <p>
+            An image can also be used as a link. To create a clickable image,
+            place the <code>&lt;img&gt;</code> element inside an
+            <code>&lt;a&gt;</code> element.
+        </p>
+
+        <pre>
+&lt;a href="https://www.example.com"&gt;
+    &lt;img src="images/logo.jpg"
+         alt="Visit Example Website"&gt;
+&lt;/a&gt;
+        </pre>
+
+        <p>
+            When the user clicks the image, the browser follows the link
+            specified by the <code>href</code> attribute.
+        </p>
+
+        <hr>
+
+        <h2>HTML Video</h2>
+
+        <p>
+            The <code>&lt;video&gt;</code> element is used to display
+            video content directly on a webpage.
+        </p>
+
+        <pre>
+&lt;video controls width="600"&gt;
+    &lt;source src="videos/sample.mp4" type="video/mp4"&gt;
+    Your browser does not support the video element.
+&lt;/video&gt;
+        </pre>
+
+        <h3>Video Controls</h3>
+
+        <p>
+            The <code>controls</code> attribute adds playback controls such
+            as play, pause, volume and fullscreen buttons.
+        </p>
+
+        <pre>
+&lt;video controls&gt;
+    &lt;source src="videos/movie.mp4" type="video/mp4"&gt;
+&lt;/video&gt;
+        </pre>
+
+        <h3>Video Autoplay and Loop</h3>
+
+        <p>
+            HTML also supports attributes such as <code>autoplay</code>,
+            <code>muted</code> and <code>loop</code>.
+        </p>
+
+        <pre>
+&lt;video controls autoplay muted loop&gt;
+    &lt;source src="videos/background.mp4"
+            type="video/mp4"&gt;
+&lt;/video&gt;
+        </pre>
+
+        <p>
+            The <code>autoplay</code> attribute starts the video automatically,
+            <code>muted</code> starts it without sound, and
+            <code>loop</code> makes the video repeat.
+        </p>
+
+        <hr>
+
+        <h2>HTML Audio</h2>
+
+        <p>
+            The <code>&lt;audio&gt;</code> element is used to add sound or
+            music to a webpage.
+        </p>
+
+        <pre>
+&lt;audio controls&gt;
+    &lt;source src="audio/music.mp3" type="audio/mpeg"&gt;
+    Your browser does not support the audio element.
+&lt;/audio&gt;
+        </pre>
+
+        <p>
+            The <code>controls</code> attribute provides buttons for playing,
+            pausing and controlling the volume of the audio.
+        </p>
+
+        <h3>Multiple Audio Formats</h3>
+
+        <p>
+            Multiple <code>&lt;source&gt;</code> elements can be used to
+            provide different audio formats. This allows browsers to choose
+            a format they support.
+        </p>
+
+        <pre>
+&lt;audio controls&gt;
+
+    &lt;source src="audio/music.mp3"
+            type="audio/mpeg"&gt;
+
+    &lt;source src="audio/music.ogg"
+            type="audio/ogg"&gt;
+
+    Your browser does not support the audio element.
+
+&lt;/audio&gt;
+        </pre>
+
+        <hr>
+
+        <h2>HTML Media Attributes</h2>
+
+        <p>
+            Media elements have several useful attributes that control how
+            audio and video behave.
+        </p>
+
+        <ul>
+            <li>
+                <strong>controls</strong> - Displays playback controls.
+            </li>
+
+            <li>
+                <strong>autoplay</strong> - Starts the media automatically.
+            </li>
+
+            <li>
+                <strong>muted</strong> - Starts the media without sound.
+            </li>
+
+            <li>
+                <strong>loop</strong> - Repeats the media after it finishes.
+            </li>
+
+            <li>
+                <strong>poster</strong> - Specifies an image displayed before
+                a video starts.
+            </li>
+
+            <li>
+                <strong>preload</strong> - Provides a hint about how the
+                browser should load the media.
+            </li>
+        </ul>
+
+        <h2>Video Poster Image</h2>
+
+        <p>
+            The <code>poster</code> attribute allows us to display an image
+            before a video starts playing.
+        </p>
+
+        <pre>
+&lt;video controls
+       poster="images/video-poster.jpg"
+       width="600"&gt;
+
+    &lt;source src="videos/lesson.mp4"
+            type="video/mp4"&gt;
+
+&lt;/video&gt;
+        </pre>
+
+        <hr>
+
+        <h2>Links and Media Example</h2>
+
+        <p>
+            The following example combines a link, an image and video
+            elements in one section.
+        </p>
+
+        <pre>
+&lt;a href="https://www.example.com" target="_blank"&gt;
+
+    &lt;img src="images/example.jpg"
+         alt="Example image"
+         width="300"&gt;
+
+&lt;/a&gt;
+
+&lt;video controls width="500"&gt;
+    &lt;source src="videos/example.mp4"
+            type="video/mp4"&gt;
+&lt;/video&gt;
+        </pre>
+
+        <h2>Important HTML Elements</h2>
+
+        <ul>
+            <li><code>&lt;a&gt;</code> - Creates a hyperlink.</li>
+            <li><code>&lt;img&gt;</code> - Displays an image.</li>
+            <li><code>&lt;video&gt;</code> - Displays video content.</li>
+            <li><code>&lt;audio&gt;</code> - Adds audio content.</li>
+            <li><code>&lt;source&gt;</code> - Specifies a media file.</li>
+        </ul>
+
+        <h2>Summary</h2>
+
+        <p>
+            Links and media are important parts of modern webpages.
+            The <code>&lt;a&gt;</code> element connects pages and resources,
+            while <code>&lt;img&gt;</code> displays images.
+            The <code>&lt;video&gt;</code> and <code>&lt;audio&gt;</code>
+            elements allow websites to include multimedia content without
+            requiring additional browser plugins.
+        </p>
+
+        <p>
+            Understanding these elements and their attributes is an important
+            part of learning HTML and building complete websites.
+        </p>
+
+    </main>
+
+    <hr>
+
+    <footer>
+        <p>HTML Review Project - Advanced Web Technology</p>
+    </footer>
+
+</body>
+
+</html>
