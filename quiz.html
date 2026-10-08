@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Final quiz for the HTML Review Website">
+
+    <title>HTML Review - Quiz</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .quiz-top { display: flex; justify-content: space-between; align-items: center; font-size: 14px; color: #4b4072; }
+        .bar { height: 8px; background: #eeeaf7; border-radius: 4px; margin: 8px 0 20px; overflow: hidden; }
+        .bar div { height: 100%; width: 0; background: #62548f; transition: width .3s; }
+        .topic { display: inline-block; font-size: 12px; background: #eeeaf7; color: #4b4072; padding: 2px 10px; border-radius: 12px; }
+        .question { font-size: 18px; font-weight: bold; margin: 12px 0 16px; }
+        .option { display: block; width: 100%; text-align: left; font: inherit; padding: 12px 14px; margin: 8px 0; background: #fff; color: #333; border: 2px solid #d9d3ee; border-radius: 8px; cursor: pointer; }
+        .option:hover:not(:disabled) { border-color: #62548f; background: #f7f5fc; }
+        .option:disabled { cursor: default; }
+        .option.correct { border-color: #2e8b57; background: #e8f6ee; }
+        .option.wrong { border-color: #c0392b; background: #fdecea; }
+        .explain { margin-top: 14px; padding: 12px 14px; background: #f2f0f8; border-left: 4px solid #62548f; border-radius: 4px; }
+        .btn { font: inherit; background: #62548f; color: #fff; border: 0; padding: 10px 24px; border-radius: 8px; cursor: pointer; margin-top: 16px; }
+        .btn:hover { background: #4b4072; }
+        .score { font-size: 42px; font-weight: bold; color: #62548f; margin: 6px 0; }
+        .topic-row { display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 1px solid #eee; }
+        .hidden { display: none; }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Final Quiz</h1>
+        <p>Test your knowledge of everything covered on this website.</p>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a> |
+        <a href="text.html">Text</a> |
+        <a href="links.html">Links & Media</a> |
+        <a href="lists.html">Lists</a> |
+        <a href="tables.html">Tables</a> |
+        <a href="forms.html">Forms</a> |
+        <a href="media.html">Multimedia</a> |
+        <a href="semantic.html">Semantic</a> |
+        <a href="metadata.html">Metadata</a> |
+        <a href="quiz.html">Quiz</a>
+    </nav>
+
+    <main>
+
+        <div id="start">
+            <h2>HTML Review Quiz</h2>
+            <p>
+                The quiz contains 44 multiple-choice questions about HTML basics,
+                text, links, images, video and audio, lists, tables, multimedia,
+                semantic elements and metadata. Questions and answers are shuffled
+                every time you start.
+            </p>
+            <button class="btn" id="startBtn">Start quiz</button>
+        </div>
+
+        <div id="game" class="hidden">
+            <div class="quiz-top">
+                <span id="counter"></span>
+                <span id="live"></span>
+            </div>
+            <div class="bar"><div id="progress"></div></div>
+            <span class="topic" id="topic"></span>
+            <p class="question" id="question"></p>
+            <div id="options"></div>
+            <div class="explain hidden" id="explain"></div>
+            <button class="btn hidden" id="nextBtn">Next</button>
+        </div>
+
+        <div id="result" class="hidden">
+            <h2>Your result</h2>
+            <div class="score" id="scoreText"></div>
+            <p id="verdict"></p>
+            <h3>By topic</h3>
+            <div id="topics"></div>
+            <button class="btn" id="restartBtn">Try again</button>
+        </div>
+
+    </main>
+
+    <footer>
+        <p>HTML Review Project - Advanced Web Technology</p>
+    </footer>
+
+    <script>
+    // Text in `backticks` is shown as inline code.
+    var Q = [
+      // Home
+      ["Home", "What does HTML stand for?", ["HyperText Markup Language", "High Tech Modern Language", "HyperText Machine Language", "Home Tool Markup Language"], 0, "HTML stands for HyperText Markup Language."],
+      ["Home", "Which statement about HTML is correct?", ["It is a markup language, not a programming language", "It is a programming language used for databases", "It is a styling language", "It is an operating system"], 0, "HTML is a markup language that tells the browser how the parts of a page are organized."],
+      ["Home", "Where are attributes written?", ["Inside the opening tag", "Inside the closing tag", "Between the opening and closing tags as content", "Only in the `<head>`"], 0, "Attributes give extra information about an element and are written in the opening tag."],
+      ["Home", "Which three elements form the basic structure of an HTML document?", ["`<html>`, `<head>`, `<body>`", "`<header>`, `<main>`, `<footer>`", "`<title>`, `<meta>`, `<link>`", "`<div>`, `<span>`, `<p>`"], 0, "Every document normally has `<html>`, `<head>` and `<body>`."],
+      ["Home", "Which technology controls the appearance of a webpage?", ["CSS", "HTML", "HTTP", "SQL"], 0, "HTML gives structure, CSS controls appearance, and JavaScript adds interactivity."],
+
+      // Text
+      ["Text", "Which heading is the most important?", ["`<h1>`", "`<h3>`", "`<h6>`", "`<head>`"], 0, "There are six levels, from `<h1>` (most important) to `<h6>` (smallest)."],
+      ["Text", "What is the difference between `<b>` and `<strong>`?", ["`<strong>` also means the text has strong importance", "`<b>` is for important text, `<strong>` is only visual", "There is no difference at all", "`<strong>` makes text smaller"], 0, "Both look bold, but `<strong>` carries the meaning of importance."],
+      ["Text", "Which tag is used to emphasize text (usually shown in italics)?", ["`<em>`", "`<ins>`", "`<mark>`", "`<small>`"], 0, "`<em>` emphasizes text; `<i>` is only italic style."],
+      ["Text", "Which tag highlights part of the text?", ["`<mark>`", "`<hl>`", "`<u>`", "`<sup>`"], 0, "`<mark>` highlights text, like a marker pen."],
+      ["Text", "Which pair represents deleted and inserted text?", ["`<del>` and `<ins>`", "`<rm>` and `<add>`", "`<sub>` and `<sup>`", "`<b>` and `<i>`"], 0, "In the example, the old price used `<del>` and the new price `<ins>`."],
+      ["Text", "How do you write H<sub>2</sub>O correctly in HTML?", ["`H<sub>2</sub>O`", "`H<sup>2</sup>O`", "`H<small>2</small>O`", "`H<mark>2</mark>O`"], 0, "`<sub>` creates subscript and `<sup>` creates superscript (as in x²)."],
+      ["Text", "What does `<br>` do?", ["Creates a line break without starting a new paragraph", "Creates a horizontal line", "Makes text bold", "Starts a new section"], 0, "`<br>` is a line break; `<hr>` is the horizontal line."],
+      ["Text", "Which tag is used for a longer quotation?", ["`<blockquote>`", "`<q>`", "`<cite>`", "`<quote>`"], 0, "`<q>` is for short quotations, `<blockquote>` for longer ones."],
+
+      // Links
+      ["Links", "Which element creates a hyperlink?", ["`<a>`", "`<link>`", "`<href>`", "`<url>`"], 0, "The anchor element `<a>` creates hyperlinks."],
+      ["Links", "Which attribute specifies the destination of a link?", ["`href`", "`src`", "`target`", "`alt`"], 0, "`href` is the most important attribute of `<a>`."],
+      ["Links", "What does `target=\"_blank\"` do?", ["Opens the link in a new tab", "Opens the link in the same tab", "Downloads the file", "Blocks the link"], 0, "The value `_blank` opens the linked document in a new browser tab."],
+      ["Links", "Which scheme opens the user's email application?", ["`mailto:`", "`email:`", "`tel:`", "`send:`"], 0, "Example: `<a href=\"mailto:student@example.com\">`."],
+      ["Links", "What is true about the `<img>` element?", ["It is a void element and has no closing tag", "It requires `</img>`", "It can only be used inside `<a>`", "It plays sound"], 0, "`<img>` is self-closing (void)."],
+      ["Links", "What is the `alt` attribute used for?", ["Alternative text for accessibility or when the image does not load", "Setting the image width", "Linking to another page", "Setting the image file path"], 0, "`alt` is shown when the image cannot be loaded and is read by screen readers."],
+      ["Links", "How do you make a clickable image?", ["Place `<img>` inside `<a>`", "Add `click` to `<img>`", "Use `<img href>` only", "Place `<a>` inside `<head>`"], 0, "When the image is inside an `<a>` element, clicking it follows the link."],
+      ["Links", "Which attribute adds play, pause and volume buttons to a video?", ["`controls`", "`poster`", "`loop`", "`preload`"], 0, "`controls` displays playback controls."],
+      ["Links", "What does `loop` do on video or audio?", ["Repeats the media after it finishes", "Starts it automatically", "Mutes it", "Shows a preview image"], 0, "`autoplay` starts, `muted` removes sound, `loop` repeats."],
+      ["Links", "What is the `poster` attribute for?", ["An image shown before the video starts", "The video title", "The video speed", "Subtitles"], 0, "`poster` specifies an image displayed before the video starts playing."],
+      ["Links", "Why use several `<source>` elements inside `<audio>`?", ["So the browser can choose a format it supports", "To play several sounds at once", "To make the audio louder", "To add subtitles"], 0, "For example, both an mp3 and an ogg file can be offered."],
+
+      // Lists
+      ["Lists", "Which element creates an unordered (bulleted) list?", ["`<ul>`", "`<ol>`", "`<dl>`", "`<li>`"], 0, "`<ul>` is unordered; each item goes inside `<li>`."],
+      ["Lists", "Which element creates a numbered list?", ["`<ol>`", "`<ul>`", "`<nl>`", "`<dt>`"], 0, "The browser numbers `<ol>` items automatically."],
+      ["Lists", "In a description list, which element holds the term?", ["`<dt>`", "`<dd>`", "`<dl>`", "`<li>`"], 0, "`<dl>` is the list, `<dt>` the term, `<dd>` the description."],
+      ["Lists", "How is a nested list created?", ["By placing a list inside an `<li>` of another list", "By using `<nest>`", "By using two `<ul>` tags in a row", "By adding `nested` to `<ul>`"], 0, "In the example, HTML, CSS and JavaScript are inside the \"Web Development\" item."],
+      ["Lists", "What does `<ol start=\"5\">` do?", ["Starts numbering from 5", "Creates 5 items", "Starts after 5 seconds", "Reverses the list"], 0, "`start` sets the first number; `reversed` counts backward."],
+
+      // Tables
+      ["Tables", "Which element creates a table row?", ["`<tr>`", "`<td>`", "`<th>`", "`<row>`"], 0, "`<tr>` is a row, `<td>` is data and `<th>` is a header cell."],
+      ["Tables", "What is `<th>` used for?", ["A header cell", "A table row", "A table footer", "The table caption"], 0, "`<th>` defines a header cell."],
+      ["Tables", "What does `colspan=\"2\"` do?", ["Makes a cell span two columns", "Makes a cell span two rows", "Creates two tables", "Adds a border"], 0, "`colspan` spans columns; `rowspan` spans rows."],
+      ["Tables", "Which three elements divide a larger table logically?", ["`<thead>`, `<tbody>`, `<tfoot>`", "`<head>`, `<body>`, `<foot>`", "`<top>`, `<middle>`, `<bottom>`", "`<th>`, `<tr>`, `<td>`"], 0, "Head, body and footer sections."],
+      ["Tables", "Which element gives a table a title?", ["`<caption>`", "`<title>`", "`<header>`", "`<legend>`"], 0, "`<caption>` provides a title or description for the table."],
+
+      // Multimedia
+      ["Multimedia", "Which element embeds another webpage inside the current page?", ["`<iframe>`", "`<embed-page>`", "`<frame-set>`", "`<link>`"], 0, "`<iframe>` embeds another webpage or online content."],
+
+      // Semantic
+      ["Semantic", "What is the main benefit of semantic HTML?", ["Elements describe their meaning, improving accessibility, SEO and readability", "Pages load instantly", "No CSS is needed", "Pages are encrypted"], 0, "Semantic elements help developers, browsers and assistive technologies."],
+      ["Semantic", "How many `<main>` elements should a page normally have?", ["One", "Two", "As many as sections", "None"], 0, "`<main>` holds the main content, normally once per page."],
+      ["Semantic", "Which element contains navigation links?", ["`<nav>`", "`<menu-bar>`", "`<links>`", "`<aside>`"], 0, "`<nav>` represents a section with navigation links."],
+
+      // Metadata
+      ["Metadata", "Where is metadata placed?", ["Inside `<head>`", "Inside `<main>`", "Inside `<footer>`", "Inside `<nav>`"], 0, "Metadata is information about the page and goes in `<head>`."],
+      ["Metadata", "What does `<meta charset=\"UTF-8\">` specify?", ["The character encoding of the document", "The page language only", "The author", "The page title"], 0, "UTF-8 supports many languages and special characters."],
+      ["Metadata", "Why is the viewport meta tag important?", ["It helps pages display correctly on mobile devices", "It adds keywords for search", "It sets the font", "It connects a stylesheet"], 0, "It is especially important for responsive design."],
+      ["Metadata", "What does `<link rel=\"stylesheet\" href=\"style.css\">` do?", ["Connects an external CSS file", "Creates a hyperlink", "Defines the title", "Adds a script"], 0, "`rel` describes the relationship between the document and the linked resource."],
+      ["Metadata", "Where is the `<title>` text displayed?", ["In the browser tab", "In the page footer", "Above every heading", "Nowhere"], 0, "It is shown in the browser tab and is useful for search engines."],
+      ["Metadata", "What is said about the keywords meta tag?", ["Modern search engines generally do not use it as an important ranking factor", "It is required for every page", "It displays words on the page", "It controls mobile display"], 0, "It is mostly of historical interest."]
+    ];
+
+    var order, idx, score, answered, byTopic;
+    var $ = function (id) { return document.getElementById(id); };
+
+    function fmt(s) {
+      return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
+              .replace(/`([^`]+)`/g, "<code>$1</code>");
+    }
+    function shuffle(a) {
+      for (var i = a.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var t = a[i]; a[i] = a[j]; a[j] = t;
+      }
+      return a;
+    }
+    function show(id) {
+      ["start", "game", "result"].forEach(function (x) { $(x).classList.toggle("hidden", x !== id); });
+    }
+
+    function start() {
+      order = shuffle(Q.map(function (_, i) { return i; }));
+      idx = 0; score = 0; byTopic = {};
+      show("game");
+      render();
+    }
+
+    function render() {
+      var q = Q[order[idx]];
+      answered = false;
+      $("counter").textContent = "Question " + (idx + 1) + " of " + Q.length;
+      $("live").textContent = "Score: " + score;
+      $("progress").style.width = (idx / Q.length * 100) + "%";
+      $("topic").textContent = q[0];
+      $("question").innerHTML = fmt(q[1]);
+      $("explain").classList.add("hidden");
+      $("nextBtn").classList.add("hidden");
+      $("nextBtn").textContent = idx === Q.length - 1 ? "Show result" : "Next";
+
+      var box = $("options");
+      box.innerHTML = "";
+      shuffle(q[2].map(function (t, i) { return { t: t, ok: i === q[3] }; })).forEach(function (o) {
+        var b = document.createElement("button");
+        b.className = "option";
+        b.innerHTML = fmt(o.t);
+        b.dataset.ok = o.ok ? "1" : "0";
+        b.onclick = function () { choose(b, q); };
+        box.appendChild(b);
+      });
+    }
+
+    function choose(btn, q) {
+      if (answered) return;
+      answered = true;
+      var ok = btn.dataset.ok === "1";
+      if (ok) score++;
+      var t = byTopic[q[0]] || (byTopic[q[0]] = { right: 0, total: 0 });
+      t.total++; if (ok) t.right++;
+
+      Array.prototype.forEach.call($("options").children, function (b) {
+        b.disabled = true;
+        if (b.dataset.ok === "1") b.classList.add("correct");
+      });
+      if (!ok) btn.classList.add("wrong");
+
+      $("explain").innerHTML = "<strong>" + (ok ? "Correct!" : "Not quite.") + "</strong> " + fmt(q[4]);
+      $("explain").classList.remove("hidden");
+      $("nextBtn").classList.remove("hidden");
+      $("live").textContent = "Score: " + score;
+    }
+
+    function next() {
+      idx++;
+      if (idx < Q.length) render(); else finish();
+    }
+
+    function finish() {
+      show("result");
+      var pct = Math.round(score / Q.length * 100);
+      $("scoreText").textContent = score + " / " + Q.length + " (" + pct + "%)";
+      $("verdict").textContent =
+        pct >= 90 ? "Excellent! You know this material very well." :
+        pct >= 70 ? "Good job! Review the topics below that are not at 100%." :
+        pct >= 50 ? "Not bad, but it is worth re-reading some pages." :
+                    "Go back through the pages and try again.";
+      var html = "";
+      Object.keys(byTopic).forEach(function (k) {
+        html += '<div class="topic-row"><span>' + k + '</span><span>' + byTopic[k].right + " / " + byTopic[k].total + "</span></div>";
+      });
+      $("topics").innerHTML = html;
+    }
+
+    $("startBtn").onclick = start;
+    $("nextBtn").onclick = next;
+    $("restartBtn").onclick = start;
+    </script>
+
+</body>
+
+</html>
